@@ -1,6 +1,6 @@
-
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+
 class Comment extends Model {}
 
 Comment.init(
@@ -10,6 +10,10 @@ Comment.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     content: {
       type: DataTypes.TEXT,
@@ -30,5 +34,10 @@ Comment.init(
     modelName: 'comment'
   }
 );
+
+Comment.associate = (models) => {
+  Comment.belongsTo(models.User);
+  Comment.belongsTo(models.Post);
+};
 
 module.exports = Comment;
