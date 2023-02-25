@@ -15,8 +15,9 @@ form.addEventListener('submit', async (event) => {
       // redirect to dashboard on login
       window.location.href = '/dashboard';
     } else {
-      const error = await response.text();
-      console.error(error);
+      alert('Failed to log in.');
+      // redirect to login page
+      window.location.href = '/login';
     }
   } catch (error) {
     console.error(error);
