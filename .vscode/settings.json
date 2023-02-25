@@ -1,7 +1,11 @@
 {
     "cSpell.words": [
+        "BOOTSNIP",
+        "cdnjs",
         "jaguks",
+        "maxcdn",
         "prestart",
         "sess"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }
