@@ -10,13 +10,11 @@
     "sequelize": "^6.6.5"
   },
   "scripts": {
-    "start": "concurrently \"npm run db\" \"npm run server\"",
-    "server": "node server.js",
-    "db": "mysql -u root -p < db/schema.sql && npx sequelize-cli db:seed:all",
-    "seed": "npx sequelize-cli db:seed:all",
-    "drop": "npx sequelize-cli db:drop",
-    "create": "npx sequelize-cli db:create",
-    "migrate": "npx sequelize-cli db:migrate"
+    "prestart": "node ./db/seeds/index.js",
+    "start": "node server.js",
+    "seed": "node ./seeds/index.js",
+    "sql": "mysql -uroot -p",
+    "test": "jest"
   },
 
   "name": "glittering-galaxy-tech-blog",

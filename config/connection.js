@@ -3,9 +3,10 @@ require("dotenv").config();
 
 let sequelize;
 
-if (process.env.JAWSDB_URL) {
+try {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
-} else {
+} catch (error) {
+  console.error("Failed to connect to JAWSDB, trying to connect to local database", error);
   sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
@@ -17,4 +18,5 @@ if (process.env.JAWSDB_URL) {
     }
   );
 }
+
 module.exports = sequelize;

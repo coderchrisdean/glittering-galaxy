@@ -8,6 +8,8 @@ const routes = require('./controllers/api');
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
 const app = express();
+const dotenv = require('dotenv');
+const PORT = 3001 || process.env.DB_PORT;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

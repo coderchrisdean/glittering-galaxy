@@ -1,6 +1,6 @@
 'use strict';
 
-const { Post } = require('../models');
+const { Post } = require('../../models');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
