@@ -6,6 +6,8 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
+const db = require('./models/db');
+const { User, Post, Comment } = db;
 
 
 const app = express();
@@ -24,18 +26,27 @@ app.use(session(sess));
 
 const hbs = expHandlebars.create({ helpers });
 
+// set up handlebars.js as template engine
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+//parse incoming json
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// static
 app.use(express.static(path.join(__dirname, 'public')));
 
+// routes
 app.use(routes);
-sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log('Now listening'));
+
+// set up db associations
+User.associate(db);
+Post.associate(db);
+Comment.associate(db);
+
+//sync database and start server
+db.sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log('Now listening on ${PORT}'));
 });
 
-sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log('Now listening'));
-});
