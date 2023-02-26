@@ -1,8 +1,15 @@
-const router = require('express').Router;
+const router = require('express').Router();
 
-// render the homepage
+// render the main page
 router.get('/', (req, res) => {
-    res.render('homepage', {
+    res.render('main', {
+       
+    });
+});
+
+// render the login page
+router.get('/login', (req, res) => {
+    res.render('login', {
         // loggedIn: req.session.loggedIn
     });
 });

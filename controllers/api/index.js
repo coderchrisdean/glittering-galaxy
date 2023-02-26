@@ -6,7 +6,7 @@ const dashboardRoutes = require('./dashboard-routes');
 const htmlRoutes = require('./html-routes');
 // const homeRoutes = require('./home-routes');
 
-router.use('/', htmlRoutes);
+router.use('/html', htmlRoutes);
 router.use('/users', userRoutes);
 router.use('/posts', postRoutes);
 router.use('/comments', commentRoutes);
