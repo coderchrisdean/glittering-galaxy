@@ -19,6 +19,10 @@ This application is deployed to Heroku no Installation is needed.
 ## Usage
 Visit the deployed application at https://glittering-galaxy.herokuapp.com/
 
+## GitHub Repository
+
+https://github.com/coderchrisdean/glittering-galaxy
+
 ## Credits
 
 ## License
