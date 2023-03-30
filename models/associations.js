@@ -1,5 +1,3 @@
-// import models
-const { User, Post, Comment } = require('.');
 
 // Define the associations
 User.hasMany(Post, {  //user has many posts

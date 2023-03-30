@@ -1,5 +1,5 @@
 # Tech Blog
-Tech Blog!
+Tech Blog Module 14 Homework Assignment
 
 ## Table Of Contents
 * Description
