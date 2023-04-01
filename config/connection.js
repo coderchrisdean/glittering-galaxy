@@ -14,7 +14,7 @@ try {
     {
       host: "localhost",
       dialect: "mysql",
-      port: process.env.DB_PORT,
+      port: 3306
     }
   );
 }

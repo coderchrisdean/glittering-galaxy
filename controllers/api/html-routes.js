@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
 
 // render the login page
 router.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../public/login.html'));
+    res.render('login');
         // loggedIn: req.session.loggedIn
 });
 
