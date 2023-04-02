@@ -1,42 +1,41 @@
 {
     "dependencies": {
-      "bcrypt": "^5.0.1",
-      "connect-session-sequelize": "^7.0.4",
-      "dotenv": "^10.0.0",
-      "express": "^4.17.1",
-      "express-handlebars": "^5.3.3",
-      "express-session": "^1.17.2",
-      "mysql2": "^2.3.2",
-      "sequelize": "^6.6.5"
+        "bcrypt": "^5.0.1",
+        "connect-session-sequelize": "^7.0.4",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "express-handlebars": "^5.3.3",
+        "express-session": "^1.17.2",
+        "mysql2": "^2.3.3",
+        "sequelize": "^6.6.5"
     },
     "scripts": {
-      "prestart": "node ./db/seeds/index.js",
-      "start": "node server.js",
-      "seed": "node ./seeds/index.js",
-      "sql": "mysql -uroot -p",
-      "test": "jest"
+        "prestart": "node ./db/seeds/index.js",
+        "start": "node server.js",
+        "seed": "node ./seeds/index.js",
+        "sql": "mysql.server start",
+        "test": "jest"
     },
-  
     "name": "glittering-galaxy-tech-blog",
-    "description": "## Table Of Contents * Description",
+    "description": "personal tech blog",
     "version": "1.0.0",
     "main": "server.js",
     "devDependencies": {
-      "concurrently": "^7.6.0"
+        "concurrently": "^7.6.0"
     },
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/coderchrisdean/glittering-galaxy.git"
+        "type": "git",
+        "url": "git+https://github.com/coderchrisdean/glittering-galaxy.git"
     },
     "keywords": [
-      "tech",
-      "blog",
-      "project"
+        "tech",
+        "blog",
+        "project"
     ],
     "author": "Christopher Dean",
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/coderchrisdean/glittering-galaxy/issues"
+        "url": "https://github.com/coderchrisdean/glittering-galaxy/issues"
     },
     "homepage": "https://github.com/coderchrisdean/glittering-galaxy#readme"
-  }
+}

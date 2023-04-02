@@ -1,5 +1,3 @@
-'use strict';
-
 const { Post } = require('../../models');
 
 const seedPosts = async () => {
@@ -21,9 +19,4 @@ const seedPosts = async () => {
   ]);
 };
 
-module.exports = {
-  up: seedPosts,
-  down: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('posts', null, {});
-  }
-};
+module.exports = seedPosts;

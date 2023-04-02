@@ -3,14 +3,14 @@ const path = require('path');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
+const { User, Post } = require('./models');
 const routes = require('./controllers/api');
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
 const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
-const PORT = process.env.DB_PORT || 3001;
+const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
@@ -42,8 +42,28 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+// Route to render the home page with the latest blog posts
+app.get('/', async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username']
+        }
+      ]
+    });
+
+    const posts = postData.map(post => post.get({ plain: true }));
+    res.render('home', { posts });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 
+
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
+});

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Comment } = require('../../models'); // import models
+const { User, Post } = require('../../models'); // import models
 // const withAuth = require('../../utils/auth');  
 
 
@@ -27,3 +27,4 @@ router.get('/', async (req, res) => {
     }
   });
   
+  module.exports = router;
