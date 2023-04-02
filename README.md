@@ -29,8 +29,12 @@ https://github.com/coderchrisdean/glittering-galaxy
 
 ## Screenshots
 
+![Screenshot of the Tech Blog](./public/img/screenshot.png)
+
 ## Questions
 If you have any questions about the repo, open an issue or contact me directly at coderchrisdean@gmail.com. 
+
+*** I AM SUBMITTING THIS INCOMPLETE AS I NEED TO FINISH OTHER ASSIGNMENTS.
 
 
 
