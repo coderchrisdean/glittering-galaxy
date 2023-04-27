@@ -29,12 +29,19 @@ https://github.com/coderchrisdean/glittering-galaxy
 
 ## Screenshots
 
-![Screenshot of the Tech Blog](./public/img/screenshot.png)
+Here is a screenshot of the rendered homepage with the seeded blog posts, as well as connection to the database using SqlDatabase extension.  This is just proof that I finally got my code to work even though it isn't styled.
+
+![Screenshot of the MVP Tech Blog](./public/img/tech_blog_indexhtml.jpg)
+![Screenshot of blog posts in the database](./public/img/tech_blog_db.jpg)
+![Screenshot of the comments in the database](./public/img/blog_posts2.jpg)
+![Screenshot of user and password in the database](./public/img/db_passwords.jpg)
+![Screenshot of the seeded blog posts](./public/img/sql_db_uiview.jpg)
+![Screenshot of db connection](./public/img/sql_connectionfrom-vscode.jpg)
 
 ## Questions
 If you have any questions about the repo, open an issue or contact me directly at coderchrisdean@gmail.com. 
 
-*** I AM SUBMITTING THIS INCOMPLETE AS I NEED TO FINISH OTHER ASSIGNMENTS.
+*** I AM SUBMITTING THIS INCOMPLETE AS I NEED TO FINISH OTHER ASSIGNMENTS. HOWEVER I GOT MY PAGE TO RENDER AND MOST ROUTES WORKING ***
 
 
 
