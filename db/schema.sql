@@ -1,5 +1,5 @@
 DROP DATABASE IF EXISTS tech_db;
-USE tech_db;
+CREATE DATABASE tech_db;
 
 -- CREATE TABLE users (
 --   id INT PRIMARY KEY AUTO_INCREMENT,
