@@ -4,7 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-const routes = require('./controllers/api');
+// const routes = require('./controllers/api');
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
 const app = express();
@@ -23,6 +23,7 @@ const sess = {
     secure: false,
     sameSite: 'strict',
   },
+  partialsDir: [path.join(__dirname, 'views/partials')],
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -40,7 +41,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(routes);
+app.use(require ('./controllers'));
+
+app.get('/', (req, res) => {
+  res.render('main');
+});
+
+app.get('/login', (req, res) => {
+res.render('login', { body : 'Test' });
+});
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
