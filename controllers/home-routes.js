@@ -1,7 +1,11 @@
 const router = require('express').Router();
 const { User, Post } = require('../models'); // import models
 // const withAuth = require('../../utils/auth');  
+//login page render
 
+router.get('/login', (req, res) => {
+    res.render('login');
+  });
 
 router.get('/', async (req, res) => {
     try {
