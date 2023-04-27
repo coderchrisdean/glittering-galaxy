@@ -3,10 +3,9 @@ require("dotenv").config();
 
 let sequelize;
 
-try {
+if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
-} catch (error) {
-  console.error("Failed to connect to JAWSDB, trying to connect to local database", error);
+} else {
   sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
@@ -14,7 +13,7 @@ try {
     {
       host: "localhost",
       dialect: "mysql",
-      port: 3306
+      port: process.env.DB_PORT || 3306
     }
   );
 }
